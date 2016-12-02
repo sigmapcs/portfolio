@@ -1,0 +1,25 @@
+@mixin thumbnail($round:5px){
+  @if type_of($round) != number{
+    @error 'Round debe de ser un Numero en px o em o rem'
+  }@else if unit($round) == '%'{
+    border-radius: $round;
+    img{
+      border-radius: $round;
+    }
+  }@else if unit($round) == 'px' or unit($round) == 'em' or unit($round) == 'rem'{
+    border-radius: $round * .75;
+    img{
+      border-radius: $round *.75;
+    }
+  }@else{
+    @error 'Round debe de ser un Numero en px o em o rem'
+  }
+  display: inline-block;
+  width: 150px;
+  padding: 5px;
+  border: 1px solid $dark-gray;
+  img{
+    display: block;
+    height: 140px;
+  }
+}

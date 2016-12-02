@@ -1,0 +1,132 @@
+$lh: 40px;
+.aside{
+  a{
+    color: $color-aside;
+    transition: $transition;
+    &:hover{
+      color: lighten($color-aside,30);
+    }
+  }
+  width: $aside-width;
+  background: $bg-aside;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: -$aside-width;
+  //opacity: .1;
+  z-index: 1000;
+  @include from(l){
+    left:0;
+  }
+  &__user{
+    padding-top: .5em;
+    padding-bottom: 0;
+    background: radial-gradient(
+                $gray 1%,
+                $dark-gray
+                );
+    height: $aside-width;
+    @include from(l){
+      height: $aside-width;
+    }
+    img{
+      display: block;
+      width: 80%;
+      margin: auto;
+      position: relative;
+      bottom: -6px;
+    }
+  }
+  &__menu{
+    @extend %list-style;
+    height: 63%;
+    display: flex;
+    flex-direction: column;
+    li{
+      flex: 0 1 16.666%;
+      border-bottom: 1px solid rgba($white,.1);
+      a{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      i,span{
+        text-align: center;
+        display: block;
+        //background: red;
+      }
+      i{
+        font-size: 1.3em;
+      }
+      span{
+        font-size: .8em;
+        text-transform: uppercase;
+        margin-top: .2em;
+      }
+    }
+    a{
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  &__footer{
+    margin-top: auto;
+    margin-bottom: .5em;
+    .networks{
+      @extend %list-style;
+      display: flex;
+      justify-content: center;
+      li{
+        margin: 0 .5em;
+      }
+    }
+    p{
+      font-size: .8em;
+      text-align: center;
+      color: $color-aside;
+      margin-top: .5em;
+      span{
+        margin: 0 3px;
+      }
+    }
+  }
+}
+.name{
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 3rem;
+  background: $black;
+  width: 300vw;
+  color: $white;
+  padding-left: calc(3.5em + 150px);
+  text-transform: uppercase;
+  font-size: 1.3em;
+  z-index: -1;
+  @include from(l){
+    background: seagreen;
+    width: $aside-width;
+    padding-left: 0;
+    text-align: center;
+    line-height: 30px;
+    font-size: .9em;
+    top: calc(150px - 30px);
+    z-index: 10;
+  }
+  a{
+    color: $white;
+    position: absolute;
+    left: calc(1em + 150px);
+    font-size: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    @include from(l){
+      display: none;
+    }
+  }
+}
+

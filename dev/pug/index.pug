@@ -1,0 +1,32 @@
+extends templates/main-template
+append config
+  -currentpage = "inicio"
+  -page = "Inicio"
+block main
+  header.page-header
+    i(class="fa fa-picture-o", aria-hidden="true")
+    h2 Portfolio
+  section.gallery
+    -var navGallery = ['all','coding','design','logo']
+    ul.nav-gallery#nav-gallery
+      each nav in  navGallery
+        if (nav=="all")
+          li: a(href="#", class="nav-selected", data-nav=nav) #{nav}
+        else
+          li: a(href="#", data-nav=nav) #{nav}
+    article.gallery__container#gallery
+      -for (var i = 1; i <= 8; i++)
+        if (i<=3)
+          -var data = navGallery[1]
+        else if ( i > 3 ) && (i <= 6)
+          -var data = navGallery[2]
+        else if (i > 6)
+          -var data = navGallery[3]
+        a(href=`http://lorempixel.com/800/400/technics/${i}/`, data-gallery=data class="gallery__item")
+          .gallery__header
+            h3 #{data}
+            .gallery_image
+              img(src=`http://lorempixel.com/800/400/technics/${i}/`)
+          .gallery__footer
+            p Title
+              span Lorem ipsum dolor sit amet.
