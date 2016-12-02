@@ -34,35 +34,42 @@ $(()=>{
 
   console.log(galleryArray);
   galleryNav.on('click','a',function (e) {
+    $('#gallery a').fadeOut();
+
     let _t = $(this),
         show = _t.attr('data-nav');
     e.preventDefault();
     _t.parents().find('a').removeClass('nav-selected');
     _t.addClass('nav-selected');
     var i;
-    for (i = 0;i<galleryArray.length;i++){
-      if (_t.attr('data-nav')=='all'){
-        $(galleryArray[i]).fadeIn();
-      }else if (_t.attr('data-nav')=='coding'){
-        if ($(galleryArray[i]).attr('data-gallery')=='coding') {
+    setTimeout(function () {
+      for (i = 0;i<galleryArray.length;i++){
+        if (_t.attr('data-nav')=='all'){
           $(galleryArray[i]).fadeIn();
-        }else{
-          $(galleryArray[i]).fadeOut();
-        }
-      }else if (_t.attr('data-nav')=='design') {
-        if ($(galleryArray[i]).attr('data-gallery') == 'design') {
-          $(galleryArray[i]).fadeIn();
-        } else {
-          $(galleryArray[i]).fadeOut();
-        }
-      }else if (_t.attr('data-nav')=='logo') {
-        if ($(galleryArray[i]).attr('data-gallery') == 'logo') {
-          $(galleryArray[i]).fadeIn();
-        } else {
-          $(galleryArray[i]).fadeOut();
+        }else if (_t.attr('data-nav')=='coding'){
+          if ($(galleryArray[i]).attr('data-gallery')=='coding') {
+            $(galleryArray[i]).fadeIn();
+          }else{
+            $(galleryArray[i]).fadeOut();
+          }
+        }else if (_t.attr('data-nav')=='design') {
+          if ($(galleryArray[i]).attr('data-gallery') == 'design') {
+            $(galleryArray[i]).fadeIn();
+          } else {
+            $(galleryArray[i]).fadeOut();
+          }
+        }else if (_t.attr('data-nav')=='logo') {
+          if ($(galleryArray[i]).attr('data-gallery') == 'logo') {
+            $(galleryArray[i]).fadeIn();
+          } else {
+            $(galleryArray[i]).fadeOut();
+          }
         }
       }
-    }
+    },400);
   })
 });
 /// $(galleryArray[i]).css('display','none');
+$('#gallery').on('click','a',(e)=>{
+  e.preventDefault();
+});
