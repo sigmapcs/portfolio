@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\tinon\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add font-awesome
+  C:\Program Files\nodejs\node.exe C:\Users\tinon\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add nivo-slider
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\tinon\bin;C:\Program Files\ImageMagick-7.0.3-Q16;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Brackets\command;C:\Program Files\Java\jdk1.8.0_101\bin;C:\Program Files\Sublime Text 3;C:\Bitnami\wampstack-7.0.11-2\php;C:\Bitnami\wampstack-7.0.11-2\mysql\bin;C:\Go;C:\Go\bin;C:\Users\tinon\AppData\Local\Microsoft\WindowsApps;C:\Users\tinon\AppData\Roaming\npm;C:\Users\tinon\AppData\Local\atom\bin;C:\Program Files (x86)\Microsoft VS Code\bin
@@ -50,8 +50,9 @@ npm manifest:
     },
     "dependencies": {
       "animate.css": "^3.5.2",
-      "jquery": "2.2.4",
+      "jquery": "3.1.1",
       "normalize.css": "^5.0.0",
+      "shufflejs": "^4.0.2",
       "wowjs": "^1.1.3"
     }
   }
@@ -187,6 +188,10 @@ Lockfile:
     dependencies:
       debug "^2.2.0"
       es6-symbol "^3.0.2"
+  
+  array-parallel@^0.1.3:
+    version "0.1.3"
+    resolved "https://registry.yarnpkg.com/array-parallel/-/array-parallel-0.1.3.tgz#8f785308926ed5aa478c47e64d1b334b6c0c947d"
   
   array-union@^1.0.1:
     version "1.0.2"
@@ -1432,6 +1437,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
     dependencies:
       array-find-index "^1.0.1"
+  
+  custom-event-polyfill@^0.3.0:
+    version "0.3.0"
+    resolved "https://registry.yarnpkg.com/custom-event-polyfill/-/custom-event-polyfill-0.3.0.tgz#99807839be62edb446b645832e0d80ead6fa1888"
   
   cwebp-bin@^3.1.0:
     version "3.2.0"
@@ -3348,9 +3357,9 @@ Lockfile:
       bin-wrapper "^3.0.0"
       logalot "^2.0.0"
   
-  jquery@2.2.4:
-    version "2.2.4"
-    resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
+  jquery@3.1.1:
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.1.1.tgz#347c1c21c7e004115e0a4da32cece041fad3c8a3"
   
   js-base64@^2.1.9:
     version "2.1.9"
@@ -3792,6 +3801,10 @@ Lockfile:
   map-obj@^1.0.0, map-obj@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
+  
+  matches-selector@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/matches-selector/-/matches-selector-1.0.0.tgz#434833447026a25ea4999edab18e4b8892b25721"
   
   math-expression-evaluator@^1.2.14:
     version "1.2.14"
@@ -5197,6 +5210,17 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.0.1.tgz#52009b27888c4dc48f591949c0a8275834c1ca7e"
   
+  shufflejs:
+    version "4.0.2"
+    resolved "https://registry.yarnpkg.com/shufflejs/-/shufflejs-4.0.2.tgz#611ac9dc19746b310bf208ad58beacc0f0c48fa1"
+    dependencies:
+      array-parallel "^0.1.3"
+      array-uniq "^1.0.2"
+      custom-event-polyfill "^0.3.0"
+      matches-selector "^1.0.0"
+      throttleit "^1.0.0"
+      xtend "^4.0.1"
+  
   sigmund@~1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/sigmund/-/sigmund-1.0.1.tgz#3ff21f198cad2175f9f3b781853fd94d0d19b590"
@@ -5556,6 +5580,10 @@ Lockfile:
     dependencies:
       chalk "^1.1.1"
       object-path "^0.9.0"
+  
+  throttleit@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/throttleit/-/throttleit-1.0.0.tgz#9e785836daf46743145a5984b6268d828528ac6c"
   
   through2-concurrent@^1.1.0:
     version "1.1.1"
@@ -6053,7 +6081,7 @@ Lockfile:
     version "1.5.1"
     resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.1.tgz#3b7741fea4a86675976e908d296d4445961faa67"
   
-  xtend@^4.0.0, "xtend@>=4.0.0 <4.1.0-0", xtend@~4.0.0:
+  xtend@^4.0.0, xtend@^4.0.1, "xtend@>=4.0.0 <4.1.0-0", xtend@~4.0.0:
     version "4.0.1"
     resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
   
@@ -6164,5 +6192,5 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/zlib-browserify/-/zlib-browserify-0.0.1.tgz#4fa6a45d00dbc15f318a4afa1d9afc0258e176cc"
 
 Trace: 
-  Error: EBUSY: resource busy or locked, open 'D:\paginas-web\portafolio-demo\node_modules\node-sass\vendor\win32-x64-48\binding.node'
+  Error: EBUSY: resource busy or locked, open 'D:\paginas-web\4cargo\node_modules\node-sass\vendor\win32-x64-48\binding.node'
       at Error (native)

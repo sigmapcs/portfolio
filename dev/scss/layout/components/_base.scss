@@ -12,12 +12,12 @@ body {
 
 // Imágenes responsive
 img {
-  max-width: 100%;
-  height: auto;
+  max-width : 100%;
+  height    : auto;
 }
 
 a {
   text-decoration : none;
+
   &:hover { text-decoration : none }
 }
-

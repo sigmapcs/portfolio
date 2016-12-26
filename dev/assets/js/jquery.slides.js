@@ -129,12 +129,12 @@
       }
       $(".slidesjs-next", $element).click(function(e) {
         e.preventDefault();
-        _this.stop(true);
+        // _this.stop(false);
         return _this.next(_this.options.navigation.effect);
       });
       $(".slidesjs-previous", $element).click(function(e) {
         e.preventDefault();
-        _this.stop(true);
+        // _this.stop(false);
         return _this.previous(_this.options.navigation.effect);
       });
       if (this.options.play.active) {

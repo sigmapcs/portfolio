@@ -1,13 +1,14 @@
-$aside-width: 150px;
+
 // COLORES MENU
-$menu-bg: $main-color;
+$menu-bg: transparent;
 $menu-bg-hover: darken($menu-bg,10);
 $menu-color-a: $second-color;
 $menu-color-a-hover: $second-color;
 $menu-text-transform: uppercase;
 $menu-border: none;
 $menu-height: 3rem;
-
+$header-width: 160px;
+$vp: l;
 // VARIABLES EXTRAS
 $transition: all .3s;
 $gutter: 1em;

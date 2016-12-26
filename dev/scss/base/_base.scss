@@ -4,13 +4,14 @@ body {
   background  : $body--background;
   font-family : $body--font-family;
   color       : $body--color;
-  min-height: 100vh;
-  //display: flex;
-  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
 }
 
 a {
-  color           : $link--color;
+  color           : inherit;
   text-decoration : none;
 }
 
@@ -69,6 +70,16 @@ h5 {
 
 h6 {
   font-size : $h6--font-size;
+}
+section{
+  position: relative;
+  z-index: -1;
+  @include to($vp){
+    left: $header-width;
+  }
+  @include from($vp){
+    padding-left: $header-width;
+  }
 }
 //img{
 //  display: block;

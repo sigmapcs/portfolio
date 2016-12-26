@@ -1,1 +1,31 @@
-"use strict";"use strict";$(function(){var d=$("#toggle-menu"),c=$("#aside"),a=$("#main"),e=$(window).width();var b=false;d.on("click",function(f){f.preventDefault();if(e<1024){if(!b){c.animate({left:"0"},300);a.animate({left:"150px"},300);b=true}else{c.animate({left:"-150px"},300);a.animate({left:"0"},300);b=false}}})});$(function(){var a=$("#nav-gallery"),c=$(".gallery__item"),b=jQuery.makeArray(c);console.log(b);a.on("click","a",function(h){$("#gallery a").fadeOut();var g=$(this),d=g.attr("data-nav");h.preventDefault();g.parents().find("a").removeClass("nav-selected");g.addClass("nav-selected");var f;setTimeout(function(){for(f=0;f<b.length;f++){if(g.attr("data-nav")=="all"){$(b[f]).fadeIn()}else{if(g.attr("data-nav")=="coding"){if($(b[f]).attr("data-gallery")=="coding"){$(b[f]).fadeIn()}else{$(b[f]).fadeOut()}}else{if(g.attr("data-nav")=="design"){if($(b[f]).attr("data-gallery")=="design"){$(b[f]).fadeIn()}else{$(b[f]).fadeOut()}}else{if(g.attr("data-nav")=="logo"){if($(b[f]).attr("data-gallery")=="logo"){$(b[f]).fadeIn()}else{$(b[f]).fadeOut()}}}}}}},400)})});$("#gallery").on("click","a",function(a){a.preventDefault()});"use strict";(function(c){var a=new Date().getFullYear();var b=c.querySelector("#year");b.innerHTML=a})(document);
+"use strict";
+"use strict";
+"use strict";
+'use strict';
+
+// $(function () {
+//   let body = $('body'),
+//       toggle = $('#toggle');
+//   toggle.on('click', (e)=>{
+//     e.preventDefault();
+//     body.toggleClass('active');
+//   });
+// });
+(function (d) {
+  var body = d.querySelector('body'),
+      toggle = d.querySelector('#toggle'),
+      topTitle = d.querySelector('.top__title');
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    body.classList.toggle('active');
+    topTitle.classList.toggle('active');
+  });
+})(document);
+'use strict';
+
+(function (d) {
+  var year = d.querySelector('#year'),
+      currentYear = new Date().getFullYear();
+  console.log(year);
+  year.innerHTML = currentYear;
+})(document);

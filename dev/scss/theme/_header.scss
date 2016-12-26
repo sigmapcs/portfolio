@@ -1,0 +1,130 @@
+$color-header: rgba($white,.4);
+.main-header{
+  display: flex;
+  flex-direction: column;
+  width: $header-width;
+  background: $gray;
+  height: 100vh;
+  //width: 100%;
+  overflow-y: auto;
+  position: fixed;
+  z-index: 200;
+}
+.top{
+  height: $header-width;
+  //position: absolute;
+  background: radial-gradient(
+            #777 20%,
+            #222
+  );
+  &__logo{
+
+  }
+  &__title{
+    position: fixed;
+    background: $green;
+    display: flex;
+    height: 2em;
+    align-items: center;
+    color: rgba($white,.8);
+    text-transform: uppercase;
+    @include to($vp){
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 3em;
+      background: $black;
+      border-bottom: 1px solid rgba($white,.3);
+      transition: $transition;
+      &.active{
+        left: $header-width;
+      }
+    }
+    @include from($vp){
+      top: calc(150px - 1em);
+      left: 0;
+      width: $header-width;
+      z-index: 250;
+    }
+    h1{
+      font-size: .8em;
+      margin: 0;
+      background: none;
+      text-align: left;
+      color: inherit;
+      @include to($vp){
+        font-size: 1em;
+        padding-left: $gutter;
+      }
+      @include from($vp){
+        text-align: center;
+      }
+    }
+    a{
+      color: inherit;
+      border-right: 1px solid rgba($white,.3);
+      height: 3rem;
+      width: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3em;
+
+      @include from($vp){
+        display: none;
+      }
+      &::before{
+        top: 1px;
+      }
+
+    }
+  }
+}
+.main-nav{
+  flex: 2;
+
+  @media screen and (landscape) and (max-height: s){
+    flex: 1;
+  }
+}
+.main-menu{
+  @extend %list-style;
+  display: flex;
+  flex-direction: column;
+  li{
+    flex: 2;
+    height: 85px;
+    border-bottom: 1px solid rgba($white,.1);
+    @include to($vp){
+      height: 70px;
+    }
+  }
+  a{
+    color: $color-header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: .7em;
+    text-transform: uppercase;
+    transition: $transition;
+    &:hover,&.selected{
+      color: rgba($white,.8);
+    }
+  }
+  span{
+    font-size: 2em;
+  }
+}
+.bottom{
+  margin-bottom: .5em;
+  p{
+    color: $color-header;
+    text-align: center;
+    font-size: .7em;
+  }
+  span {
+    margin-left: 3px;
+  }
+}

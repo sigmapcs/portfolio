@@ -1,5 +1,18 @@
 [class^="icon-"]::before{
   position: relative;
-  top: 30px;
+  top: 3px;
 }
-
+body{
+  //overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  @include to($vp){
+    left: $header-width*-1;
+    transition: $transition;
+  }
+  &.active{
+    left: 0;
+  }
+}

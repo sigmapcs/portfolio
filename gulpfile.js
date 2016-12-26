@@ -43,12 +43,14 @@ const
         ],
         css:[
             `${dir.nm}/normalize.css/normalize.css`,
-            `${dir.nm}/font-awesome/css/font-awesome.css`,
+            // `${dir.nm}/font-awesome/css/font-awesome.css`,
             // `${dir.nm}/animate.css/animate.min.css`,
             // `${dir.dev}/assets/css/fonts.css`
-            `${dir.dev}/assets/css/owl.carousel.css`,
-            `${dir.dev}/assets/css/owl.theme.css`,
-            `${dir.dev}/assets/css/owl.transitionscss`,
+            // `${dir.dev}/assets/css/owl.carousel.css`,
+            // `${dir.dev}/assets/css/owl.theme.css`,
+            // `${dir.dev}/assets/css/owl.transitionscss`,
+            // `${dir.nm}/nivo-slider/nivo-slider.css`,
+            // `${dir.dev}/assets/css/nivo/default.css`,
             `${dir.dev}/assets/css/jquery.fancybox.css`
         ],
         mCSS: 'styles.min.css',
@@ -56,9 +58,12 @@ const
         JS:[
             // `${dir.dev}/assets/js/blank.js`
             `${dir.nm}/jquery/dist/jquery.js`,
-            // `${dir.dev}/assets/js/edgrid-menu.js`
-            `${dir.dev}/assets/js/jquery.slides.js`,
-            `${dir.dev}/assets/js/owl.carousel.js`,
+            // `${dir.dev}/assets/js/jquery.slides.js`,
+            // `${dir.nm}/shufflejs/dist/shuffle.min.js`,
+            // `${dir.dev}/assets/js/ed-grid.js`,
+            // `${dir.nm}/nivo-slider/jquery.nivo.slider.pack.js`
+            // `${dir.dev}/assets/js/jquery.slides.js`,
+            // `${dir.dev}/assets/js/owl.carousel.js`,
             `${dir.dev}/assets/js/jquery.fancybox.js`
             // `${dir.nm}/wowjs/dist/wow.min.js`
         ]
@@ -131,14 +136,14 @@ gulp.task('pug', ()=> {
 
 gulp.task('es6',() => {
     return gulp.src('./dev/es6/*.js')
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(babel(opts.es6))
         // .pipe(uglify())
         .pipe(concat('scripts.js'))
-        .pipe(sourcemaps.write())
-        .pipe(compress({
-          type: 'js'
-        }))
+        // .pipe(sourcemaps.write())
+        // .pipe(compress({
+        //   type: 'js'
+        // }))
         .pipe(gulp.dest('./dist/js/'))
         // .pipe(gulp.dest('./dev/assets/js/'))
         .on('end', browserSync.reload);

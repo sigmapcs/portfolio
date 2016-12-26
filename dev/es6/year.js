@@ -1,5 +1,6 @@
 ((d)=>{
-  let currentYear = new Date().getFullYear();
-  let year = d.querySelector('#year');
+  let year = d.querySelector('#year'),
+  currentYear = new Date().getFullYear();
+  console.log(year);
   year.innerHTML= currentYear;
 })(document);

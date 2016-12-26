@@ -3,15 +3,18 @@ $dark-blue   : darken($blue,15%);
 $light-blue  : lighten($blue,25%);
 $black       : #070D12;
 $white       : #FDFDFD;
-$gray        : #E0E0E2;
+$gray        : #1C262B;
 $dark-gray   : #444;
-$light-gray  : #f0f0f0;
+$light-gray  : #1C262B;
 $red         : darken(tomato,10);
 $dark-red    : darken(red,20);
 $light-red   : lighten(red,25);
-$green       : #056430;
+$green       : #2BA163;
 $dark-green  : darken($green,10);
 $light-green : lighten($green,20);
+$orange      : #EA4E2E;
+$dark-orange : darken($orange,10);
+$light-orange: lighten($orange,10);
 
 $social-colors:(
   facebook    : #3b5998,
@@ -27,13 +30,11 @@ $social-colors:(
   sigmapcs    : #0085CC
 );
 
-$bg-aside: #1C262B;
-$color-aside: #728187;
+
 $sigma-color: #0091ea; //hsl(201,50,40);
-$main-color: $sigma-color;
+$main-color: $dark-blue;
 $second-color: $white;
 $fonts-color: $dark-gray;
 $headers-color: darken($fonts-color,10);
 $header-bg: $second-color;
 $bg-color: $second-color;
-$bg-items: #EAE5D1;

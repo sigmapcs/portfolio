@@ -1,8 +1,11 @@
 .slides{
+  @include edItem(100);
   display: none;
   position: relative;
-  width: 100%;
+  //width: 100%;
   z-index: 1;
+  //border-radius: 2em;
+  //box-shadow: 0 0 10px  #444;
   a:hover{
     text-decoration: none;
   }
@@ -27,10 +30,15 @@
   font-size: 1.5em;
   border-radius: 50%;
   text-shadow: text3d(2,$black);
-  opacity: .25;
+  opacity: .5;
   transition: $transition;
+  z-index: 2000;
   &:hover{
-    opacity: .9;
+    opacity: 1;
+  }
+  &::before{
+    position: relative;
+    top: 3px !important;
   }
 }
 .slidesjs-previous{
@@ -49,12 +57,19 @@
   @extend %list-style;
   position: absolute;
   z-index: 1000;
-  bottom: .5em;
+  bottom: $gutter;
   display: flex;
-  right: .5em;
+  right: $gutter*2;
   a{
     margin: 0 .5em;
     color: #FFFFFF;
     text-shadow: text3d(1,rgba(#000,.5));
+    &::before{
+      position: relative;
+      top: 0 !important;
+    }
+  }
+  @include to(m){
+    transform: scale(.8);
   }
 }

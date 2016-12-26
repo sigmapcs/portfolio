@@ -1,7 +1,11 @@
-$cssCore    : false  !default;
-$cssHelpers : false  !default;
-$devMode    : false !default;
+// Variables globales (puede sobreescribirlas antes de importar ED grid)
+$cssCore    : false ;
+$cssHelpers : false ;
+$devMode    : false;
 
+// Selectores (clases) para flex-container y flex-item
+$container : container;
+$item      : item;
 
 // config
 @import "config/colors";
@@ -15,9 +19,8 @@ $devMode    : false !default;
 //Layout
 @import "layout/ed-grid";
 
-
 // UI
-//@import "ui/master";
+@import "ui/master";
 
 @import "base/base";
 
@@ -28,6 +31,11 @@ $devMode    : false !default;
 @import "theme/footer";
 @import "theme/main";
 @import "theme/aside";
+@import "theme/home";
+@import "theme/resume";
+@import "theme/portfolio";
+@import "theme/blog";
+@import "theme/contact";
 
 // modules
 @import "modules/modules";

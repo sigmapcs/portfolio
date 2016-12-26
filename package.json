@@ -34,8 +34,9 @@
   },
   "dependencies": {
     "animate.css": "^3.5.2",
-    "jquery": "2.2.4",
+    "jquery": "3.1.1",
     "normalize.css": "^5.0.0",
+    "shufflejs": "^4.0.2",
     "wowjs": "^1.1.3"
   }
 }
