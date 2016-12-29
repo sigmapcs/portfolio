@@ -1,0 +1,21 @@
+$sice: 50px;
+$resume-bg: #EBF0DF;
+$before-bg: #8ACB82;
+.resume > .container{
+  outline: 1px solid red;
+  width: 90%;
+}
+.resume{
+  min-height: 100vh !important;
+  overflow-y: auto;
+}
+.history{
+  @include edItem(100,50);
+  overflow-y: scroll;
+  //height: 500px;
+  background: lightcoral;
+}
+.skills{
+  @include edItem(100,50);
+  background: lightgoldenrodyellow;
+}

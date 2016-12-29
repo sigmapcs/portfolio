@@ -3,11 +3,36 @@
   width: 100%;
   background: img('bg.jpg') center / cover no-repeat;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: $white;
+  padding-bottom: 3em;
   &::after{
     content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(#666,.5);
+    background: rgba(#111,.75);
+  }
+  &__message{
+    position: relative;
+    z-index: 500;
+    span{
+      text-align: center;
+      display: block;
+    }
+    p{
+      text-align: center;
+      font-size: 1.2em;
+    }
+  }
+  .home__name{
+    margin: 0;
+    font-size: 3em;
+    text-transform: uppercase;
   }
 }

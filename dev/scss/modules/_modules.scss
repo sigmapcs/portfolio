@@ -3,8 +3,8 @@
   top: 3px;
 }
 body{
+  //overflow-x: hidden;
   //overflow: hidden;
-  overflow-x: hidden;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -14,5 +14,19 @@ body{
   }
   &.active{
     left: 0;
+  }
+}
+.title_page{
+  margin-top: 1em;
+  span{
+    display: block;
+    font-size: 2em;
+    line-height: 1;
+    text-align: center;
+  }
+  h2{
+    line-height:1;
+    margin-bottom: 2em;
+    font-size: 3em;
   }
 }

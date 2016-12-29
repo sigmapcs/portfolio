@@ -72,10 +72,13 @@ h6 {
   font-size : $h6--font-size;
 }
 section{
-  position: relative;
+  //position: relative;
   z-index: -1;
+
   @include to($vp){
-    left: $header-width;
+    margin-left: $header-width;
+    padding-top: 4em;
+    width: 100%;
   }
   @include from($vp){
     padding-left: $header-width;
